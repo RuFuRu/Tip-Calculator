@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Mono', 'sans-serif';
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 80px;
+}
+
+.main-container {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  padding: 4rem 2rem;
+  border-radius: 30px;
+  column-gap: 50px;
+  width: clamp(300px, 90%, 1000px);
+}
+
+.left-side {
+  width: 50%;
+}
+
+.left-side h3 {
+  color: hsl(186, 14%, 43%);
+}
+
+.right-side {
+  width: 50%;
+  background-color: hsl(183, 100%, 15%);
+  padding: 3rem 2.5rem;
+  border-radius: 10px;
+}
+
+.right-side h3 {
+  color: white;
+}
+
+.right-side h5 {
+  color: hsl(186, 14%, 43%);
+}
+
+.right-side h2 {
+  color: hsl(171, 67%, 46%);
+  font-size: 3rem;
+}
+
+.bill-container {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bill-container h3 {
+  margin-bottom: 1rem;
+}
+
+.svg-dollar {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+input {
+  font-size: 24px;
+  background-color: hsl(180, 23%, 94%);
+  text-align: right;
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input:focus{
+  border: 2px solid hsl(171, 63%, 52%);
+}
+
+.select-tip-container h3 {
+  margin-bottom: 1rem;
+}
+
+.tip-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 50px;
+  gap: 20px;
+  height: 150px;
+}
+
+.tip-grid-container button {
+  display: block;
+  cursor: pointer;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(183, 100%, 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  font-size: 24px;
+}
+
+.tip-grid-container button:hover {
+  background-color: hsl(171, 86%, 61%);
+  color: hsl(183, 100%, 15%);
+}
+
+.tip-grid-container button:nth-child(3) {
+  background-color: hsl(171, 67%, 46%);
+  color: hsl(183, 100%, 15%);
+}
+
+.tip-grid-container button:nth-child(3):hover {
+  background-color: hsl(171, 86%, 61%);
+  color: hsl(183, 100%, 15%);
+}
+
+.btn-clicked {
+  background-color: hsl(171, 86%, 61%) !important;
+  color: hsl(183, 100%, 15%) !important;
+}
+
+
+.tip-grid-container .last-grid-item {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(186, 14%, 43%);
+}
+
+.num-of-people {
+  position: relative;
+}
+
+.num-of-people h3 {
+  margin-bottom: 1rem;
+}
+
+.svg-person {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+.tip-amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.total-amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reset {
+  background-color: hsl(171, 67%, 46%);
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 6rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.reset:hover {
+  background-color: hsl(171, 86%, 61%);
+}
+
+.no-people {
+  position: absolute;
+  color: red;
+  left: 70%;
+  top: 0%;
+}
+
+.no-people-input {
+  border: 2px solid red;
+}
+
+@media (max-width: 1050px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 530px) {
+  input {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .tip-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+}
+
+@media (max-width: 469px) {
+  .tip-amount-container {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .total-amount-container {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
