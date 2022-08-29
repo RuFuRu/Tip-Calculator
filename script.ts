@@ -31,50 +31,32 @@ billValue.addEventListener('input', () => {
 gridButtons.forEach(button => {
   button.addEventListener('click', () => {
     if(button.classList.contains('5%')) {
-      gridButtons.forEach(btn => {
-        btn.setAttribute('style', 'pointer-events: auto');
-        btn.classList.remove('btn-clicked');
-      });
+      resetButtons();
       val = 0.05;
       button.classList.add('btn-clicked');
       button.setAttribute('style', 'pointer-events: none')
     } else if(button.classList.contains('10%')) {
-        gridButtons.forEach(btn => {
-          btn.setAttribute('style', 'pointer-events: auto');
-          btn.classList.remove('btn-clicked');
-        });
+        resetButtons();
         val = 0.1;
         button.classList.add('btn-clicked');
         button.setAttribute('style', 'pointer-events: none')
     } else if(button.classList.contains('15%')) {
-        gridButtons.forEach(btn => {
-          btn.setAttribute('style', 'pointer-events: auto');
-          btn.classList.remove('btn-clicked');
-        });
+        resetButtons();
         button.classList.add('btn-clicked');
         val = 0.15;
         button.setAttribute('style', 'pointer-events: none')
     } else if(button.classList.contains('25%')) {
-        gridButtons.forEach(btn => {
-          btn.setAttribute('style', 'pointer-events: auto');
-          btn.classList.remove('btn-clicked');
-        });
+        resetButtons();
         button.classList.add('btn-clicked');
         val = 0.25;
-      button.setAttribute('style', 'pointer-events: none')
+        button.setAttribute('style', 'pointer-events: none')
     } else if(button.classList.contains('50%')) {
-        gridButtons.forEach(btn => {
-          btn.setAttribute('style', 'pointer-events: auto');
-          btn.classList.remove('btn-clicked');
-        });
+        resetButtons();
         button.classList.add('btn-clicked');
         val = 0.5;
-      button.setAttribute('style', 'pointer-events: none')
+        button.setAttribute('style', 'pointer-events: none')
     } else if(button.classList.contains('Custom')) {
-        gridButtons.forEach(btn => {
-          btn.setAttribute('style', 'pointer-events: auto');
-          btn.classList.remove('btn-clicked');
-        });
+        resetButtons();
         const regex = /\D/;
         let pmt: any = prompt('How much do you wish to tip ? (please input a number without percentage sign)');
         if(typeof pmt === null) {
@@ -106,8 +88,12 @@ resetButton.addEventListener('click', () => {
   totalAmount.textContent = '$0.00';
   billValue.value = '';
   val = 0;
+  resetButtons();
+})
+
+function resetButtons() {
   gridButtons.forEach(btn => {
     btn.setAttribute('style', 'pointer-events: auto');
     btn.classList.remove('btn-clicked');
   });
-})
+}

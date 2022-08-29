@@ -123,16 +123,6 @@ input:focus{
   color: hsl(183, 100%, 15%);
 }
 
-.tip-grid-container button:nth-child(3) {
-  background-color: hsl(171, 67%, 46%);
-  color: hsl(183, 100%, 15%);
-}
-
-.tip-grid-container button:nth-child(3):hover {
-  background-color: hsl(171, 86%, 61%);
-  color: hsl(183, 100%, 15%);
-}
-
 .btn-clicked {
   background-color: hsl(171, 86%, 61%) !important;
   color: hsl(183, 100%, 15%) !important;
