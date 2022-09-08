@@ -16,7 +16,9 @@ numOfPeopleInput.addEventListener('input', () => {
   } else {
     numOfPeopleInput.classList.remove('no-people-input');
     errorPara.setAttribute('style', 'display: none');
-  }  
+  }
+  totalAmount.textContent = `$${((billValue.valueAsNumber * val + billValue.valueAsNumber) / numOfPeopleInput.valueAsNumber).toFixed(2)}`;
+  tipAmount.textContent = `$${((billValue.valueAsNumber * val) / numOfPeopleInput.valueAsNumber).toFixed(2)}`;
 })
 
 billValue.addEventListener('input', () => {
@@ -24,8 +26,8 @@ billValue.addEventListener('input', () => {
     totalAmount.textContent = '$0.00';
     tipAmount.textContent = '$0.00';
   }
-  totalAmount.textContent = `$${(billValue.valueAsNumber * val + billValue.valueAsNumber).toFixed(2)}`;
-  tipAmount.textContent = `$${(billValue.valueAsNumber * val).toFixed(2)}`;
+  totalAmount.textContent = `$${((billValue.valueAsNumber * val + billValue.valueAsNumber) / numOfPeopleInput.valueAsNumber).toFixed(2)}`;
+  tipAmount.textContent = `$${((billValue.valueAsNumber * val) / numOfPeopleInput.valueAsNumber).toFixed(2)}`;
 })
 
 gridButtons.forEach(button => {
@@ -86,8 +88,9 @@ gridButtons.forEach(button => {
 resetButton.addEventListener('click', () => {
   tipAmount.textContent = '$0.00';
   totalAmount.textContent = '$0.00';
-  billValue.value = '';
+  billValue.value = '1';
   val = 0;
+  numOfPeopleInput.value = '1';
   resetButtons();
 })
 
